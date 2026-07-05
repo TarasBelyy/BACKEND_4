@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <title>Страница</title>
+    </head>
+    <body>
+        <h2>Домашнаяя страница</h2>
+        <p>Здравствуйте</p>
+        {% if user.is_authenticated %}
+        <form action={% url "logout" %} method="post">
+            {% csrf_token %}
+            <button type="submit">Выйти</botton>
+        </form>
+        {% else %}
+        <a href="{% url 'login' %}">Войти</a>
+        <a href="{% url 'register' %}">Зарегистрироваться</a>
+        {% endif %}
+    </body>
+</html>
