@@ -4,5 +4,3 @@ from django.db import models
 
 class CustomUser(AbstractUser):
     self_description = models.TextField(blank=True)
-
-
